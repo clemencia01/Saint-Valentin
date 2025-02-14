@@ -1,0 +1,88 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes borderGlow {
+    0% { box-shadow: 0 0 5px rgba(255, 107, 107, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 107, 107, 0.5); }
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .card-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffffff, #ffe6e6, #ffd6d6, #ffe6e6);
+    background-size: 400% 400%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family: 'Georgia', serif;
+    position: relative;
+    animation: gradientShift 30s ease infinite, fadeIn 1.5s ease-out;
+  }
+
+  .heart-decoration {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #ff6b6b;
+    font-size: 24px;
+    animation: heartBeat 0.5s ease-in-out infinite;
+  }
+
+  .header {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .content {
+    color: #444;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  .content p {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .content p:nth-child(1) { animation-delay: 1s; }
+  .content p:nth-child(2) { animation-delay: 1.5s; }
+  .content p:nth-child(3) { animation-delay: 2s; }
+  .content p:nth-child(4) { animation-delay: 2.5s; }
+
+  .signature {
+    margin-top: 30px;
+    font-style: italic;
+    color: #666;
+    animation: fadeIn 1s ease-out 3s forwards;
+  }
+
+  .border-decoration {
+    border: 2px solid #ffc6c6;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    animation: borderGlow 3s ease-in-out infinite;
+  }
+
+  /* Ajout d'effets au survol */
+  .content p:hover {
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+  }
